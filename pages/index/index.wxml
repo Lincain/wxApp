@@ -1,0 +1,32 @@
+<view class='weather-wrapper'>
+  <view class='location-tips' bindtap='onTapLocation'>
+    <view class='location-city'>
+      <image class='city-icon' src='../images/location-icon.png' mode='scaleToFill'></image>
+      <view class='city'>成都</view>
+    </view>
+    <view class='city-text'>点击获取当前城市</view>
+  </view>
+  <view class='nowTemp'>{{nowTemp}}</view>
+  <view class='nowWeather'>{{nowWeather}}</view>
+  <image class='weather-backgorund' src='{{weatherBackPath}}' mode='scaleToFill'></image>
+  <view class='weekWeather' bindtap='onTapWeekWeather'>
+    <view class='todayDay'>{{todayDay}}</view>
+    <view class='todayTemp'>{{todayTemp}}</view>
+    <image class='week-icon' src='../images/arrow.png' mode='scaleToFill'></image>
+  </view>
+</view>
+
+<view class='hourWeather-tip'>
+  <image class='hourTip-icon' src='../images/time-icon.png'></image>
+  <view class='hourTip-text'>未来24小时天气预测</view>
+</view>
+
+<scroll-view scroll-x>
+  <view class='weather-list'>
+    <view class='today-weather' wx:for='{{forecastMap}}'>
+      <view class='today-time'>{{item.time}}</view>
+      <image class='weather-icon' src='../images/{{item.weatherIcon}}-icon.png' mode='scaleToFill'></image>
+      <view class='temp-text'>{{item.temp}}℃</view>
+    </view>
+  </view>
+</scroll-view>

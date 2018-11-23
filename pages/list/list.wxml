@@ -1,0 +1,9 @@
+<view class='weekWeather-tip'>未来一周的天气状况</view>
+<view class='oneWeather' wx:for='{{oneWeather}}'>
+    <view class='weekTime'>
+      <view class='todayTime'>{{item.todayTime}}</view>
+      <view class='dateTime'>{{item.dateTime}}</view>
+    </view>
+    <view class='tempScope'>{{item.tempScope}}</view>
+    <image class='weatherIcon' src='../images/{{item.iconPath}}-icon.png'></image> 
+</view>
